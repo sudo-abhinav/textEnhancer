@@ -26,20 +26,20 @@ function App() {
 
   //TODO bug in this part.....
 
-  const togglebtn = () => {
+  function togglebtn() {
     if (color === "success") {
       setcolor("red");
       // setcolor("#EB4D4B");
       document.body.style.backgroundColor = "red";
-      showAlert("white mode has been enabled", "success");
+      showAlert("red mode has been enabled", "danger");
       console.log("not working");
     } else {
       setcolor("success");
       document.body.style.backgroundColor = "white";
-      showAlert("red mode has been enabled", "danger");
+      showAlert("white mode has been enabled", "success");
       console.log("working");
     }
-  };
+  }
 
   //TODO ........
 
@@ -62,6 +62,7 @@ function App() {
       <Router>
         <Navbar
           title="TextChanger"
+          // title="princebsdk"
           aboutTExt=" About"
           mode={mode}
           color={color}
@@ -73,7 +74,7 @@ function App() {
         <div className="container my-3">
           <Switch>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
 
             <Route exact path="/">

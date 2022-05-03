@@ -9,7 +9,7 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg navbar-${
         props.mode
         // (props.mode, props.color)
-      } bg-${props.mode} bg-${props.color} `}
+      } bg-${props.mode.color} `}
     >
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="/">TextUtlis</a> */}
@@ -33,9 +33,6 @@ export default function Navbar(props) {
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
-              {/* <a className="nav-link active" aria-current="page" href="/">
-                🏠
-              </a> */}
             </li>
             <li className="nav-item">
               {/* <a className="nav-link" href="/">About🤔</a> */}
@@ -45,21 +42,10 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
-          {/* <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form> */}
 
           <div
-            type="button"
-            className={`btn btn-${
+            type="button "
+            className={`btn  disabled  btn-${
               props.color === "success" ? "danger" : "success"
             } mx-2`}
             onClick={props.togglebtn}
@@ -103,8 +89,3 @@ Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   aboutTExt: PropTypes.string,
 };
-
-// Navbar.defaultprops = {
-//   title: "set title here" ,
-//   aboutTExt: "add about Here"
-// };

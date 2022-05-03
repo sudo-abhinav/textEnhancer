@@ -1,28 +1,14 @@
 import React, { useState } from "react";
 
-export default function About() {
-  const [mystyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
+export default function About(props) {
+  // const [mystyle, setMyStyle] = useState({
+  //   color: "black",
+  //   backgroundColor: "white",
+  // });
 
-  const [btntext, setBtnText] = useState("Enable Dark Mode");
-
-  const toggleStyle = () => {
-    if (mystyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-        border: "1px solid white",
-      });
-      setBtnText("Enable Light Mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setBtnText("Enable Dark Mode");
-    }
+  let mystyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "grey" : "white",
   };
 
   return (
@@ -40,7 +26,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong> About Website </strong>
             </button>
           </h2>
           <div
@@ -50,14 +36,10 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mystyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              {/* <strong> */}
+              This Website Mainly use to Make Changes in Your Long Paragraph &
+              Remove Extra Spaces and Few More Thing.
+              {/* </strong> */}
             </div>
           </div>
         </div>
@@ -72,7 +54,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>About Developer</strong>
             </button>
           </h2>
           <div
@@ -82,18 +64,17 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mystyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Hi , folks My name is Abhinav kumar. I'm a final year
+              student(Master of Computer Applications). I'm an Web Devploment
+              enthusiast & a learner. I belive in the power of community.
+              <br />
+              <a href="https://www.linkedin.com/in/abhikr02/">
+                Let's connect on Linkedin
+              </a>
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+        {/* <div className="accordion-item">
           <h2 className="accordion-header" id="headingThree">
             <button
               className="accordion-button collapsed"
@@ -124,9 +105,9 @@ export default function About() {
               though the transition does limit overflow.
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="conatiner my-3">
+      {/* <div className="conatiner my-3">
         <button
           type="submit"
           onClick={toggleStyle}
@@ -134,7 +115,7 @@ export default function About() {
         >
           {btntext}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
