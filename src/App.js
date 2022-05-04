@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   //
@@ -59,38 +59,38 @@ function App() {
   return (
     <>
       {/* <Navbar title="TextUtils" aboutTExt=" About" /> */}
-      <Router>
-        <Navbar
-          title="TextChanger"
-          // title="princebsdk"
-          aboutTExt=" About"
-          mode={mode}
-          color={color}
-          toggleMode={toggleMode}
-          togglebtn={togglebtn}
-        />
-        <Alert alert={alert} />
-        {/* <Navbar /> */}
-        <div className="container my-3">
-          <Switch>
+      {/* <Router> */}
+      <Navbar
+        title="TextChanger"
+        // title="princebsdk"
+        aboutTExt=" About"
+        mode={mode}
+        color={color}
+        toggleMode={toggleMode}
+        togglebtn={togglebtn}
+      />
+      <Alert alert={alert} />
+      {/* <Navbar /> */}
+      <div className="container my-3">
+        {/* <Switch>
             <Route exact path="/about">
               <About mode={mode} />
-            </Route>
+            </Route> */}
 
-            <Route exact path="/">
-              <TextForm
-                showAlert={showAlert}
-                heading="Enter The Text To Analyze"
-                mode={mode}
-                // color={color}
-                // togglebtn={togglebtn}
-              />
-            </Route>
-          </Switch>
+        {/* <Route exact path="/"> */}
+        <TextForm
+          showAlert={showAlert}
+          heading="Enter The Text To Analyze"
+          mode={mode}
+          // color={color}
+          // togglebtn={togglebtn}
+        />
+        {/* </Route> */}
+        {/* </Switch> */}
 
-          {/* <About /> */}
-        </div>
-      </Router>
+        {/* <About /> */}
+      </div>
+      {/* </Router> */}
     </>
   );
 }
