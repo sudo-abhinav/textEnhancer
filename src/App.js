@@ -62,7 +62,7 @@ function App() {
       {/* <Router> */}
       <Navbar
         title="TextChanger"
-        // title="princebsdk"
+        // title="anything"
         aboutTExt=" About"
         mode={mode}
         color={color}
